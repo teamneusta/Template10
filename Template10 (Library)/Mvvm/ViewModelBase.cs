@@ -16,6 +16,10 @@ namespace Template10.Mvvm
         private volatile bool isNavigatedTo;
         private volatile bool isNavigatedFrom;
 
+        [JsonIgnore]
+        public bool IsNavigatedTo => isNavigatedTo;
+        [JsonIgnore]
+        public bool IsNavigatedFrom => isNavigatedFrom;
         public virtual void OnNavigatedTo(object parameter, NavigationMode mode, IDictionary<string, object> state) { /* nothing by default */ }
         public virtual Task OnNavigatedFromAsync(IDictionary<string, object> state, bool suspending)
         {
