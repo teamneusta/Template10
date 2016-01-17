@@ -36,6 +36,22 @@ namespace Template10.Mvvm
 
         #endregion
 
+        #region Overrides of BindableBase
+
+        public override void RaisePropertyChanged([CallerMemberName]string propertyName = null)
+        {
+            if (!this.isNavigatedFrom)
+                base.RaisePropertyChanged(propertyName);
+        }
+
+        public override void RaisePropertyChanged<T>(Expression<Func<T>> propertyExpression)
+        {
+            if (!this.isNavigatedFrom)
+                base.RaisePropertyChanged(propertyExpression);
+        }
+
+        #endregion
+
         #region Explicit Implementation of INavigable
 
         void INavigable.OnNavigatedTo(object parameter, NavigationMode mode, IDictionary<string, object> state)
