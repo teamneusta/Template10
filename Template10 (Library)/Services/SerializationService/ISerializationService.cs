@@ -7,13 +7,16 @@ namespace Template10.Services.SerializationService
         /// <summary>
         /// Serializes the parameter.
         /// </summary>
-        string Serialize(object parameter);
+        object Serialize(object parameter);
 
         /// <summary>
         /// Deserializes the parameter.
         /// </summary>
-        object Deserialize(string parameter);
+        object Deserialize(object parameter);
 
-        T Deserialize<T>(string parameter);
+        /// <summary>
+        /// Deserializes the parameter.
+        /// </summary>
+        T Deserialize<T>(object parameter);
     }
 }
